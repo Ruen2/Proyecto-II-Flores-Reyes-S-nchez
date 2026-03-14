@@ -158,16 +158,42 @@ def tabla_multiplicar_visual(numero):
 
 def menu_texto_artistico():
     """Menú para generadores de texto artístico"""
-    print("\n--- GENERADORES DE TEXTO ---")
-    print("1. Crear Banner")
-    print("2. Marco Decorativo")
-    print("3. Tabla de Multiplicar")
-    print("4. Volver al menú principal")
+    while True:
+        limpiar_pantalla_simple()
+        print("\n--- GENERADORES DE TEXTO ---")
+        print("1. Crear Banner")
+        print("2. Marco Decorativo")
+        print("3. Tabla de Multiplicar")
+        print("4. Volver al menú principal")
 
-    # TODO: Implementar lógica del menú
+        opcion = input("\nSeleccione una opción (1-4): ")
 
-    pass  # Reemplazar con su código
-
+        if opcion == "1":
+            texto = input("Ingrese el texto para el banner: ")
+            generar_banner(texto)
+            pausar()
+        elif opcion == "2":
+            texto = input("Ingrese el texto a enmarcar: ")
+            print("Estilos: 1 (*), 2 (★), 3 (@)")
+            try:
+                est = int(input("Seleccione estilo (1-3): "))
+                marco_decorativo(texto, est)
+            except ValueError:
+                print("Entrada no válida, usando estilo por defecto.")
+                marco_decorativo(texto, 1)
+            pausar()
+        elif opcion == "3":
+            try:
+                num = int(input("¿De qué número quieres la tabla? (1-10): "))
+                tabla_multiplicar_visual(num)
+            except ValueError:
+                print("Por favor, ingresa un número válido.")
+            pausar()
+        elif opcion == "4":
+            break
+        else:
+            print("Opción inválida.")
+            pausar()
 
 # ============================================
 # SECCIÓN 4: ANIMACIONES (Estudiante 3)
