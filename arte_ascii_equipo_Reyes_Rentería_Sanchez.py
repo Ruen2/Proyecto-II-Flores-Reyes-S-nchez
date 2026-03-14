@@ -32,6 +32,7 @@ def mostrar_menu_principal():
     print("5. Tabla de Multiplicar Visual")
     print("6. Galería")
     print("-"*60)
+    print("Salir")
 
 
 # ============================================
