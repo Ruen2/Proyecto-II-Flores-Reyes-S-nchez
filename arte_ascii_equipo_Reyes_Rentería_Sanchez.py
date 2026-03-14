@@ -124,22 +124,18 @@ def generar_banner(texto):
 def marco_decorativo(texto, estilo):
     """
     Crea un marco decorativo alrededor del texto.
-
-    Args:
-        texto (str): Texto a enmarcar
-        estilo (int): Tipo de estilo (1, 2, o 3)
     """
-    # TODO: Implementar diferentes estilos de marcos
-    # Estilo 1: Simple con ═ ║
-    # Estilo 2: Doble con bordes decorativos
-    # Estilo 3: Con asteriscos o caracteres especiales
-
-    # Caracteres útiles:
-    # ═ ║ ╔ ╗ ╚ ╝ (estilo 1)
-    # ★ ☆ (estilo 2)
-    # * # @ (estilo 3)
-
-    pass  # Reemplazar con su código
+    # designacion de simbolo por cada estilo
+    if estilo == 2:
+        simbolo = "★"
+    elif estilo == 3:
+        simbolo = "@"
+    else:
+        simbolo = "*" 
+    borde = simbolo * (len(texto) + 4)
+    print(borde)
+    print(f"{simbolo} {texto} {simbolo}")
+    print(borde
 
 
 def tabla_multiplicar_visual(numero):
