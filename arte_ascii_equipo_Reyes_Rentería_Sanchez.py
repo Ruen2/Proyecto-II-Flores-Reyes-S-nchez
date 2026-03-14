@@ -113,23 +113,13 @@ def menu_patrones():
 def generar_banner(texto):
     """
     Genera un banner con el texto ingresado.
-
-    Args:
-        texto (str): Texto a convertir en banner
     """
-    # TODO: Implementar banner grande
-    # Opción simple: crear un marco alrededor del texto
-    # Opción avanzada: convertir cada letra a ASCII art grande
-
-    # Ejemplo simple:
-    # ╔══════════════════════╗
-    # ║                      ║
-    # ║     HOLA MUNDO       ║
-    # ║                      ║
-    # ╚══════════════════════╝
-
-    pass  # Reemplazar con su código
-
+    ancho = len(texto) + 8
+    print("╔" + "═" * ancho + "╗")
+    print("║" + " " * ancho + "║")
+    print(f"║    {texto.upper()}    ║")
+    print("║" + " " * ancho + "║")
+    print("╚" + "═" * ancho + "╝")
 
 def marco_decorativo(texto, estilo):
     """
