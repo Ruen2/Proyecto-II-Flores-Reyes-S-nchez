@@ -22,7 +22,7 @@ def mostrar_menu_principal():
     """Muestra el menú de la galería de arte ASCII"""
     print("\n" + "="*60)
     print("     🎨 GALERÍA DE ARTE ASCII v1.0 🎨")
-    print("     Creado por: [Nombres del equipo]")
+    print("     Creado por: [Marco Antonio Reyes Cuevas, Rubén Sánchez Suárez y Atziry Flores Rentería]")
     print("="*60)
     print("\nGALERÍA:")
     print("1. Patrones Geométricos")
@@ -30,7 +30,7 @@ def mostrar_menu_principal():
     print("3. Marcos Decorativos")
     print("4. Animaciones")
     print("5. Tabla de Multiplicar Visual")
-    print("6. Salir")
+    print("6. Galería")
     print("-"*60)
 
 
@@ -355,9 +355,15 @@ def main():
             menu_animaciones()
         elif opcion == "5":
             print("\n--- TABLA DE MULTIPLICAR VISUAL ---")
-            # TODO: Solicitar número y generar tabla
+                  try:
+                num = int(input("Número para la tabla (1-10): "))
+                arte = tabla_multiplicar_visual(num)
+                guardar_en_galeria(arte)
+            except ValueError:
+                print("Entrada no válida.")
             pass
-        elif opcion == "6":
+        elif opcion == "6": gestionar_galeria()
+            elif opcion == "7": 
             print("\n" + "="*60)
             print("  ¡Gracias por visitar la Galería de Arte ASCII!")
             print("  Creado con ❤️  y código por: [Nombres del equipo]")
