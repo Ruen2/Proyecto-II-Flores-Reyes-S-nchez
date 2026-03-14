@@ -141,26 +141,19 @@ def marco_decorativo(texto, estilo):
 def tabla_multiplicar_visual(numero):
     """
     Genera una tabla de multiplicar con formato visual atractivo.
-
-    Args:
-        numero (int): Número para generar la tabla (1-10)
     """
-    # TODO: Implementar tabla decorada
-    # - Crear encabezado decorativo
-    # - Generar tabla del 1 al 10
-    # - Alinear números correctamente
-    # - Cerrar con pie decorativo
-
-    # Ejemplo:
-    # ╔════════════════════════╗
-    # ║  TABLA DEL 5           ║
-    # ╠════════════════════════╣
-    # ║  5 x  1 =  5           ║
-    # ║  5 x  2 = 10           ║
-    # ║  ...                   ║
-    # ╚════════════════════════╝
-
-    pass  # Reemplazar con su código
+    titulo = f" TABLA DEL {numero} "
+    print("╔" + "═" * 20 + "╗")
+    print(f"║{titulo:^20}║")
+    print("╠" + "═" * 20 + "╣")
+    
+    for i in range(1, 11):
+        resultado = numero * i
+        # Usamos f-strings para alinear los números ( :2d es para 2 dígitos )
+        linea = f"{numero} x {i:2d} = {resultado:2d}"
+        print(f"║  {linea:^16}  ║")
+        
+    print("╚" + "═" * 20 + "╝")
 
 
 def menu_texto_artistico():
