@@ -3,17 +3,20 @@ Generador de Arte ASCII Animado
 Proyecto de Animación
 
 Equipo:
-- Estudiante 1: [Marco Antonio Reyes Cuevas] - Menú y Patrones Geométricos
-- Estudiante 2: [Ruben Sanchez Suarez] - Generadores de Texto Artístico
-- Estudiante 3: [Atziry flores Renteria] - Animaciones
+- Estudiante 1: [Nombre] - Menú y Patrones Geométricos
+- Estudiante 2: [Nombre] - Generadores de Texto Artístico
+- Estudiante 3: [Nombre] - Animaciones
 
-Fecha: Marzo 2026
-Universidad de Guadalajara - CUGDL
+Fecha: Febrero 2026
+Universidad de Guadalajara - Campus GDL
 """
 
 # ============================================
 # SECCIÓN 1: MENÚ PRINCIPAL (Estudiante 1)
 # ============================================
+
+import os
+
 
 def mostrar_menu_principal():
     """Muestra el menú de la galería de arte ASCII"""
@@ -38,82 +41,71 @@ def mostrar_menu_principal():
 def triangulo(altura):
     """
     Genera un triángulo de asteriscos de altura especificada.
-
-    Args:
-        altura (int): Número de filas del triángulo
     """
-    # TODO: Implementar
-    # Usar un loop for con range(1, altura + 1)
-    # Cada fila debe tener i asteriscos
-    # Ejemplo: si altura=5
-    # *
-    # **
-    # ***
-    # ****
-    # *****
-
-    pass  # Reemplazar con su código
+    for i in range(1, altura + 1):
+        print('*' * i)
 
 
 def cuadrado(lado):
     """
     Genera un cuadrado con bordes de tamaño especificado.
-
-    Args:
-        lado (int): Tamaño del lado del cuadrado
     """
-    # TODO: Implementar
-    # - Primera fila: todos asteriscos o símbolos
-    # - Filas del medio: símbolo, espacios, símbolo
-    # - Última fila: todos asteriscos o símbolos
-    # Ejemplo: cuadrado(5)
-    # *****
-    # *   *
-    # *   *
-    # *   *
-    # *****
+    if lado < 2:
+        print("Error: El tamaño mínimo debe ser 2")
+        return
 
-    pass  # Reemplazar con su código
+    for i in range(lado):
+        if i == 0 or i == lado - 1:
+            print('*' * lado)
+        else:
+            print('*' + ' ' * (lado - 2) + '*')
 
 
 def piramide(altura):
     """
     Genera una pirámide centrada de altura especificada.
-
-    Args:
-        altura (int): Número de filas de la pirámide
     """
-    # TODO: Implementar
-    # Cada fila debe:
-    # - Tener espacios al inicio para centrar: (altura - i) espacios
-    # - Tener asteriscos: 2*i - 1 asteriscos
-    # Ejemplo: piramide(5)
-    #     *
-    #    ***
-    #   *****
-    #  *******
-    # *********
-
-    pass  # Reemplazar con su código
+    for i in range(altura):
+        espacios = ' ' * (altura - i - 1)
+        estrellas = '*' * (2 * i + 1)
+        print(espacios + estrellas)
 
 
 def menu_patrones():
     """Menú para seleccionar patrones geométricos"""
-    print("\n--- PATRONES GEOMÉTRICOS ---")
-    print("1. Triángulo")
-    print("2. Cuadrado")
-    print("3. Pirámide")
-    print("4. Volver al menú principal")
+    while True:
+        limpiar_pantalla_simple()
+        print("\n--- PATRONES GEOMÉTRICOS ---")
+        print("1. Triángulo")
+        print("2. Cuadrado")
+        print("3. Pirámide")
+        print("4. Volver al menú principal")
 
-    # TODO: Implementar lógica del menú
-    # - Solicitar opción al usuario
-    # - Pedir tamaño del patrón
-    # - Llamar a la función correspondiente
-    # - Preguntar si desea ver otro patrón
+        opcion = input("\nSeleccione una opción (1-4): ")
 
-    pass  # Reemplazar con su código
-
-
+        if opcion == "4":
+            break
+        
+        if opcion in ["1", "2", "3"]:
+            try:
+                tamano = int(input("Ingrese el tamaño/altura del patrón: "))
+                print("\nResultado:\n")
+                
+                if opcion == "1":
+                    triangulo(tamano)
+                elif opcion == "2":
+                    cuadrado(tamano)
+                elif opcion == "3":
+                    piramide(tamano)
+                
+                pausar()
+            except ValueError:
+                print("\n❌ Error: Por favor, ingrese un número entero válido.")
+                pausar()
+        else:
+            print("\n❌ Opción inválida.")
+            pausar()
+            
 # ============================================
 # SECCIÓN 3: TEXTO ARTÍSTICO (Estudiante 2)
 # ============================================
