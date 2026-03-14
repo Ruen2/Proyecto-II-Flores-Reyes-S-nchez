@@ -318,7 +318,15 @@ def pausar():
 # ============================================
 
 def main():
+    if os.path.exists('datos'):
+        archivos = [f for f in os.listdir('datos') if f.endswith('.txt')]
+        for arch in archivos:
+            try:
+                with open(f"datos/{arch}", "r", encoding="utf-8") as f:
+                    galeria_reciente.append(f.read())
+            except: pass
     """Función principal del programa"""
+
 
     print("╔════════════════════════════════════════════════════════════╗")
     print("║           ¡Bienvenido a la Galería de Arte ASCII!         ║")
@@ -337,7 +345,9 @@ def main():
             menu_patrones()
         elif opcion == "2":
             print("\n--- GENERADOR DE BANNER ---")
-            # TODO: Solicitar texto y generar banner
+            txt = input("Texto del banner: ")
+            arte = generar_banner(txt)
+            guardar_en_galeria(arte)
             pass
         elif opcion == "3":
             menu_texto_artistico()
