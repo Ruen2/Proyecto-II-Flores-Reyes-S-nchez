@@ -3,9 +3,9 @@ Generador de Arte ASCII Animado
 Proyecto de Animación
 
 Equipo:
-- Estudiante 1: [Nombre] - Menú y Patrones Geométricos
-- Estudiante 2: [Nombre] - Generadores de Texto Artístico
-- Estudiante 3: [Nombre] - Animaciones
+- Estudiante 1: [Marco Antonio Reyes Cuevas] - Menú y Patrones Geométricos
+- Estudiante 2: [Rubén Sánchez Suárez] - Generadores de Texto Artístico
+- Estudiante 3: [Atziry Flores Rentería] - Animaciones
 
 Fecha: Febrero 2026
 Universidad de Guadalajara - Campus GDL
