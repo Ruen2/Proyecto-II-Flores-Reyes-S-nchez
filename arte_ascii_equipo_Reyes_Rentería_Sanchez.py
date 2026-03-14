@@ -367,7 +367,7 @@ def main():
             elif opcion == "7": 
             print("\n" + "="*60)
             print("  ¡Gracias por visitar la Galería de Arte ASCII!")
-            print("  Creado con ❤️  y código por: [Nombres del equipo]")
+            print("  Creado con ❤️  y código por: Marco Antonio Reyes Cuevas, Atziry Flores Renteria, Ruben Sanchez Suarez")
             print("="*60)
             continuar = False
         else:
