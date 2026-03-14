@@ -200,70 +200,63 @@ def menu_texto_artistico():
 # ============================================
 
 def crear_retraso(duracion):
-    """
-    Crea un retraso usando un loop vacío.
-
-    Args:
-        duracion (int): Factor de duración (más alto = más lento)
-    """
-    # TODO: Implementar retraso
-    # Usar un loop for que no haga nada
-    # Ejemplo: for _ in range(duracion * 100000):
-    #              pass
-
-    pass  # Reemplazar con su código
-
-
+    """Crea un retraso usando un loop vacío (sin importar time)"""
+    for _ in range(duracion * 1000000):
+        pass
+    
 def barra_progreso():
-    """Muestra una barra de progreso animada"""
-    # TODO: Implementar barra de progreso
-    # - Usar un loop de 0 a 100
-    # - En cada iteración, mostrar la barra actualizada
-    # - Usar caracteres como █ ■ o # para la barra llena
-    # - Usar - o espacio para la parte vacía
-    # - Mostrar el porcentaje
+    """Muestra una barra de progreso animada."""
+    print("\nProcesando arte...")
+    for i in range(0, 101, 5):
+        relleno = "■" * (i // 5)
+        vacio = "-" * (20 - (i // 5))
+        # Requisito: usar \r para sobrescribir
+        print(f"\r[{relleno}{vacio}] {i}%", end="", flush=True)
+        crear_retraso(2)
+    print("¡Completo!")
 
-    # Ejemplo de salida:
-    # Procesando...
-    # [■■■■■■■■■■----------] 50%
-    # [■■■■■■■■■■■■■■■■----] 80%
-    # [■■■■■■■■■■■■■■■■■■■■] 100% ¡Completo!
+def animacion_texto_movil(texto="STARS"):
+    """Anima un texto moviéndose de izquierda a derecha."""
+    print("\nPresione Ctrl+C para detener o espere a que termine...")
+    try:
+        for i in range(30):
+            espacios = " " * i
+            print(f"\r{espacios}☆ {texto} ☆", end="", flush=True)
+            crear_retraso(1)
+        print("\nAnimación finalizada.")
+    except KeyboardInterrupt:
+        print("\nAnimación interrumpida.")
 
-    # Pista: usar end="\r" en print para sobrescribir la misma línea
-
-    pass  # Reemplazar con su código
-
-
-def animacion_texto_movil():
-    """Anima un texto moviéndose de izquierda a derecha"""
-    # TODO: Implementar animación de texto
-    # - Definir el texto a animar
-    # - Usar un loop para cada posición
-    # - En cada iteración, imprimir espacios + texto
-    # - Incrementar los espacios para simular movimiento
-    # - Limpiar la línea anterior con \r
-
-    # Ejemplo:
-    # ☆                (frame 1)
-    #  ☆               (frame 2)
-    #   ☆              (frame 3)
-    # ...
-
-    pass  # Reemplazar con su código
-
+def animar_barra_progreso():
+    """Animación de barra de progreso simple."""
+    import sys
+    print("\nBarra de progreso:")
+    for i in range(31):
+        barra = '[' + '#' * i + ' ' * (30 - i) + ']'
+        porcentaje = int((i / 30) * 100)
+        print(f"\r{barra} {porcentaje}%", end="", flush=True)
+        crear_retraso(1)
+    print("\n¡Progreso completo!")
 
 def menu_animaciones():
     """Menú para animaciones"""
-    print("\n--- ANIMACIONES ---")
-    print("1. Barra de Progreso")
-    print("2. Texto en Movimiento")
-    print("3. Volver al menú principal")
-
-    # TODO: Implementar lógica del menú
-
-    pass  # Reemplazar con su código
-
-
+    while True:
+        limpiar_pantalla_simple()
+        print("\n--- SECCIÓN DE ANIMACIONES ---")
+        print("1. Barra de Progreso")
+        print("2. Texto en Movimiento")
+        print("3. Volver al menú principal")
+        
+        opcion = input("\nSeleccione (1-3): ")
+        if opcion == "1":
+            animar_barra_progreso()
+            pausar()
+        elif opcion == "2":
+            txt = input("Texto a animar: ")
+            animacion_texto_movil(txt)
+            pausar()
+        elif opcion == "3":
+            break
 # ============================================
 # FUNCIONES AUXILIARES
 # ============================================
