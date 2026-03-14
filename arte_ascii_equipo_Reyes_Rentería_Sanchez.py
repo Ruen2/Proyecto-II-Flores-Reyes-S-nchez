@@ -260,14 +260,55 @@ def menu_animaciones():
 # ============================================
 # FUNCIONES AUXILIARES
 # ============================================
+galeria_reciente = []
 
+def guardar_en_galeria(arte):
+    """Almacena en lista y guarda en archivo .txt."""
+    if not arte: return
+    galeria_reciente.append(arte)
+    
+    # Crear carpeta datos si no existe
+    if not os.path.exists('datos'):
+        os.makedirs('datos')
+    
+    # Exportar individualmente
+    filename = f"datos/arte_{len(galeria_reciente)}.txt"
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(arte)
+    print(f"\n✅ Arte guardado en lista y en {filename}")
+
+def gestionar_galeria():
+    """Muestra historial y permite limpiar."""
+    while True:
+        limpiar_pantalla_simple()
+        print("\n--- GESTIÓN DE GALERÍA ---")
+        print(f"Items en historial: {len(galeria_reciente)}")
+        print("1. Ver historial de esta sesión")
+        print("2. Limpiar historial")
+        print("3. Volver")
+        
+        opcion = input("\nSeleccione: ")
+        if opcion == "1":
+            if not galeria_reciente:
+                print("La galería está vacía.")
+            for idx, item in enumerate(galeria_reciente):
+                print(f"\n--- Arte #{idx+1} ---")
+                print(item)
+            pausar()
+        elif opcion == "2":
+            galeria_reciente.clear()
+            print("Historial limpio.")
+            pausar()
+        elif opcion == "3": break
+        
 def limpiar_pantalla_simple():
-    """Imprime líneas en blanco para simular limpieza de pantalla"""
-    # No usamos os.system() porque no está en los módulos 1-6
     print("\n" * 50)
+    """Imprime líneas en blanco para simular limpieza de pantalla"""
+   
 
 
 def pausar():
+    input("\nPresione Enter para continuar...")
     """Pausa hasta que el usuario presione Enter"""
     input("\nPresione Enter para continuar...")
 
