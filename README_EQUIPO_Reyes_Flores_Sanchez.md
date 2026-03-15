@@ -22,3 +22,14 @@ Opción 4 (Animaciones): Se desplaza un sub-menú con opciones del 1-3. Opción 
 Opción 5 (Tablas de multiplicar): Opción 3 (Tabla de multiplicar visual): Debes colocar que tabla de multiplicar que quieres que se genere, luego de que se genere, debes presionar  2 veces "Enter" para salir al menú principal.
 
 Opción 6 (Galería): Se desplaza un menú con 3 opciones (1-3). Opción 1 (Ver historial): Genera un documento nuevo con el historial de los procesos hechos anteriormente. Opción 2 (Limpiar historial): Elimina/limpia el historial; Opción 3 (Volver): Te regresa al menú principal.
+
+Screenshoots del output:
+![](https://github.com/Ruen2/Proyecto-II-Flores-Reyes-S-nchez/blob/80119eb1f2a13c99155a1c510aaf02ad8bc51544/terminal1.png)
+
+![](https://github.com/Ruen2/Proyecto-II-Flores-Reyes-S-nchez/blob/80119eb1f2a13c99155a1c510aaf02ad8bc51544/terminal2.png)
+
+![](https://github.com/Ruen2/Proyecto-II-Flores-Reyes-S-nchez/blob/80119eb1f2a13c99155a1c510aaf02ad8bc51544/terminal3.png)
+
+![](https://github.com/Ruen2/Proyecto-II-Flores-Reyes-S-nchez/blob/80119eb1f2a13c99155a1c510aaf02ad8bc51544/terminal4.png)
+
+![]((https://github.com/Ruen2/Proyecto-II-Flores-Reyes-S-nchez/blob/80119eb1f2a13c99155a1c510aaf02ad8bc51544/terminal5.png))
