@@ -17,7 +17,6 @@ Universidad de Guadalajara - Campus GDL
 
 import os
 
-
 def mostrar_menu_principal():
     """Muestra el menú de la galería de arte ASCII"""
     print("\n" + "="*60)
@@ -136,7 +135,7 @@ def marco_decorativo(texto, estilo):
     borde = simbolo * (len(texto) + 4)
     print(borde)
     print(f"{simbolo} {texto} {simbolo}")
-    print(borde
+    print(borde)
 
 
 def tabla_multiplicar_visual(numero):
@@ -356,7 +355,7 @@ def main():
             menu_animaciones()
         elif opcion == "5":
             print("\n--- TABLA DE MULTIPLICAR VISUAL ---")
-                  try:
+            try:
                 num = int(input("Número para la tabla (1-10): "))
                 arte = tabla_multiplicar_visual(num)
                 guardar_en_galeria(arte)
@@ -364,7 +363,7 @@ def main():
                 print("Entrada no válida.")
             pass
         elif opcion == "6": gestionar_galeria()
-            elif opcion == "7": 
+        elif opcion == "7": 
             print("\n" + "="*60)
             print("  ¡Gracias por visitar la Galería de Arte ASCII!")
             print("  Creado con ❤️  y código por: Marco Antonio Reyes Cuevas, Atziry Flores Renteria, Ruben Sanchez Suarez")
