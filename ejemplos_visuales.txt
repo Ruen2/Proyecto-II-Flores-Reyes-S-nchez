@@ -1,0 +1,90 @@
+## 1. TRIÁNGULO (altura = 5)
+*
+**
+***
+****
+*****
+
+## 2. CUADRADO (lado = 5)
+*****
+*   *
+*   *
+*   *
+*****
+
+## 3. PIRÁMIDE (altura = 5)
+    *
+   ***
+  *****
+ *******
+*********
+
+## 4. BANNER "EJEMPLO"
+╔═══════════════╗
+║               ║
+║    EJEMPLO    ║
+║               ║
+╚═══════════════╝
+
+## 5. MARCOS DECORATIVOS
+5.1 BANNER:
+╔════════════╗
+║            ║
+║    HOLA    ║
+║            ║
+╚════════════╝
+
+5.2 MARCO DECORATIVO:
+*******
+* DAD *
+*******
+
+5.3 MARCO DECORATIVO:
+★★★★★★★
+★ DAD ★
+★★★★★★★
+
+5.4 MARCO DECORATIVO:
+@@@@@@@
+@ DAD @
+@@@@@@@
+
+
+## 6. TABLA MULTIPLICAR (número = 7)
+ TABLA DEL 7 × 1-10
+╔════════════════════╗
+║    TABLA DEL 7     ║
+╠════════════════════╣
+║    7 x  1 =  7     ║
+║    7 x  2 = 14     ║
+║    7 x  3 = 21     ║
+║    7 x  4 = 28     ║
+║    7 x  5 = 35     ║
+║    7 x  6 = 42     ║
+║    7 x  7 = 49     ║
+║    7 x  8 = 56     ║
+║    7 x  9 = 63     ║
+║    7 x 10 = 70     ║
+╚════════════════════╝
+============================
+
+## 7. BARRA PROGRESO:
+[###                           ] 10%
+[######                        ] 20%
+[#########                     ] 30%
+[############                  ] 40%
+[###############               ] 50%
+[##################            ] 60%
+[#####################         ] 70%
+[########################      ] 80%
+[###########################   ] 90%
+[##############################] 100%
+¡Progreso completo!
+
+## 8. TEXTO EN MOVIMIENTO "☆ hola mundo ☆" (movimiento izquierda→derecha)
+Frame: ☆ hola mundo ☆
+Frame:    ☆ hola mundo ☆
+Frame:       ☆ hola mundo ☆
+Frame:          ☆ hola mundo ☆
+Frame:             ☆ hola mundo ☆
+Frame:                ☆ hola mundo ☆
