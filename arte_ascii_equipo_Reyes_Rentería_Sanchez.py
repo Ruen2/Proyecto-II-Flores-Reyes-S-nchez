@@ -44,9 +44,6 @@ def triangulo(altura):
     """
     for i in range(1, altura + 1):
         print('*' * i)
-        print(linea)
-        resultado += linea + "\n"
-    return resultado
 
 
 def cuadrado(lado):
@@ -55,15 +52,13 @@ def cuadrado(lado):
     """
     if lado < 2:
         print("Error: El tamaño mínimo debe ser 2")
-        return None
+        return
 
     for i in range(lado):
         if i == 0 or i == lado - 1:
             print('*' * lado)
         else:
             print('*' + ' ' * (lado - 2) + '*')
-            resultado += linea + "\n"
-    return resultado
 
 
 def piramide(altura):
@@ -74,9 +69,7 @@ def piramide(altura):
         espacios = ' ' * (altura - i - 1)
         estrellas = '*' * (2 * i + 1)
         print(espacios + estrellas)
-        print(linea)
-        resultado += linea + "\n"
-    return resultado
+
 
 def menu_patrones():
     """Menú para seleccionar patrones geométricos"""
@@ -105,7 +98,6 @@ def menu_patrones():
                 elif opcion == "3":
                     piramide(tamano)
                 
-                guardar_en_galeria(arte) 
                 pausar()
             except ValueError:
                 print("\n❌ Error: Por favor, ingrese un número entero válido.")
@@ -119,18 +111,15 @@ def menu_patrones():
 # ============================================
 
 def generar_banner(texto):
-    """Genera un banner y lo devuelve como string."""
+    """
+    Genera un banner con el texto ingresado.
+    """
     ancho = len(texto) + 8
-    lineas = [
-        "╔" + "═" * ancho + "╗",
-        "║" + " " * ancho + "║",
-        f"║    {texto.upper()}    ║",
-        "║" + " " * ancho + "║",
-        "╚" + "═" * ancho + "╝"
-    ]
-    resultado = "\n".join(lineas)
-    print(resultado)
-    return resultado
+    print("╔" + "═" * ancho + "╗")
+    print("║" + " " * ancho + "║")
+    print(f"║    {texto.upper()}    ║")
+    print("║" + " " * ancho + "║")
+    print("╚" + "═" * ancho + "╝")
 
 def marco_decorativo(texto, estilo):
     """
@@ -144,9 +133,9 @@ def marco_decorativo(texto, estilo):
     else:
         simbolo = "*" 
     borde = simbolo * (len(texto) + 4)
-    resultado = f"{borde}\n{simbolo} {texto} {simbolo}\n{borde}"
-    print(resultado)
-    return resultado
+    print(borde)
+    print(f"{simbolo} {texto} {simbolo}")
+    print(borde)
 
 
 def tabla_multiplicar_visual(numero):
@@ -164,10 +153,8 @@ def tabla_multiplicar_visual(numero):
         linea = f"{numero} x {i:2d} = {resultado:2d}"
         print(f"║  {linea:^16}  ║")
         
-   lineas.append("╚" + "═" * 20 + "╝")
-    resultado_final = "\n".join(lineas)
-    print(resultado_final)
-    return resultado_final
+    print("╚" + "═" * 20 + "╝")
+
 
 def menu_texto_artistico():
     """Menú para generadores de texto artístico"""
@@ -288,7 +275,7 @@ def guardar_en_galeria(arte):
     filename = f"datos/arte_{len(galeria_reciente)}.txt"
     with open(filename, "w", encoding="utf-8") as f:
         f.write(arte)
-    print(f"\n Arte guardado en lista y en {filename}")
+    print(f"\n✅ Arte guardado en lista y en {filename}")
 
 def gestionar_galeria():
     """Muestra historial y permite limpiar."""
@@ -352,7 +339,7 @@ def main():
     while continuar:
         mostrar_menu_principal()
 
-        opcion = input("\nSeleccione una opción (1-7): ")
+        opcion = input("\nSeleccione una opción (1-6): ")
 
         if opcion == "1":
             menu_patrones()
